@@ -38,7 +38,6 @@ echo "libraryDependencies += \"org.scalatest\" % \"$def_scalatest_artifact\" % \
 echo "" >> $PWD/build.sbt
 
 SCRIPT_DIR="`dirname \"$0\"`"
-echo $SCRIPT_DIR
 if [ -L $0 ]
 then
     SCRIPT_DIR=$( dirname $( readlink $0 ) )
