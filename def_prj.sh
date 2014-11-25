@@ -38,6 +38,11 @@ echo "libraryDependencies += \"org.scalatest\" % \"$def_scalatest_artifact\" % \
 echo "" >> $PWD/build.sbt
 
 SCRIPT_DIR="`dirname \"$0\"`"
+echo $SCRIPT_DIR
+if [ -L $0 ]
+then
+    SCRIPT_DIR=$( dirname $( readlink $0 ) )
+fi
 cp $SCRIPT_DIR/README.MD .
 cp $SCRIPT_DIR/Hello.scala $PWD/src/main/scala/
 cp $SCRIPT_DIR/HelloTest.scala $PWD/src/test/scala/
