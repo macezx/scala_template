@@ -1,8 +1,10 @@
 src='src'
 def_ver='0.1'
-def_scala_ver='2.11.3'
-def_scalatest_artifact='scalatest_2.11'
-def_scalatest_ver='2.2.1'
+# there are some dependencies between scala versions
+# and libraries which built on it
+def_scala_ver='2.10.4'
+def_scalatest_artifact='scalatest_2.10'
+def_scalatest_ver='2.1.7'
 
 PWD=$(pwd)
 touch build.sbt
@@ -27,7 +29,7 @@ echo "" >> $PWD/build.sbt
 
 echo "Scala version(default:$def_scala_ver)"
 read SCALA_VER
-if [ -z "$CALA_VER" ]
+if [ -z "$SCALA_VER" ]
 then
     SCALA_VER=$def_scala_ver
 fi
